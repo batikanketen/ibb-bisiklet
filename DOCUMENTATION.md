@@ -21,7 +21,7 @@ ibb-bisiklet/
 ## 📸 Proje Görselleri
 
 ### 🏠 Anasayfa
-![Anasayfa](screenshots/anasayfa1.png)
-![Anasayfa](screenshots/anasayfa2.png)
-![Anasayfa](screenshots/anasayfa3.png)
-![Anasayfa](screenshots/anasayfa4.png)
+![Anasayfa](corporate/screenshots/anasayfa1.png)
+![Anasayfa](corporate/screenshots/anasayfa2.png)
+![Anasayfa](corporate/screenshots/anasayfa3.png)
+![Anasayfa](corporate/screenshots/anasayfa4.png)
