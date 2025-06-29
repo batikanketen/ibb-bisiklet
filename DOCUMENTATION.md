@@ -16,3 +16,12 @@ ibb-bisiklet/
 ├── manage.py
 ├── README.md
 └── requirements.txt
+
+
+## 📸 Proje Görselleri
+
+### 🏠 Anasayfa
+![Anasayfa](screenshots/anasayfa1.png)
+![Anasayfa](screenshots/anasayfa2.png)
+![Anasayfa](screenshots/anasayfa3.png)
+![Anasayfa](screenshots/anasayfa4.png)
