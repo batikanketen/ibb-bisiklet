@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{entegrasyon.title}}{% endblock %}
+
+{% block content %}
+<!-- Page title -->
+<section id="page-title" class="text-light" style="background-color: #002E71;">
+    <div class="container">
+        <div class="breadcrumb" style="color: white;">
+            <ul>
+                <li><a href="/">Anasayfa</a></li>
+                <li class="active"><a href="#" style="color: white;">Entegrasyonlar</a></li>
+            </ul>
+        </div>
+        <div class="page-title">
+            <h1>İSTANBUL’DA BİSİKLET YOLLARININ TOPLU ULAŞIM İLE ENTEGRASYONU</h1>
+            <span></span>
+        </div>
+    </div>
+</section>
+<!-- end: Page title -->
+<section id="page-title" style="background-image: url('{{entegrasyon.image.url}}'); width: 100%; height: 650px; background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="page-title">
+        </div>
+    </div>
+</section>
+
+
+<!-- end: Page title -->
+<!-- Content -->
+<section id="page-content" class="p-b-0">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="col-lg-12 ">
+                <div class="project-description">
+                    <h2>{{entegrasyon.title}}</h2>
+                    <h3 style="text-align: justify;"><p>{{entegrasyon.content|safe}}</p></h3>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div>
+
+<!-- Info Table Section -->
+<section class="info-table" style="display: flex; margin-left: 200px; padding: 10px;">
+    <div class="column" style="flex: 1; padding: 5px; margin-right: -400px;">
+        <!-- Başlık ve öğeleri çevreleyen container -->
+        <div>
+            <ul style="list-style-type: none; padding: 0; margin: 0; font-size: 18px;">
+                <li style="font-size: 30px; margin-bottom: 20px;">ANADOLU YAKASI</li>
+                {% for item in anadolu_yakasi_list %}
+                    <li style="padding: 10px 0; border-bottom: 1px solid #ccc;">
+                        {{ item }}
+                    </li>
+                {% endfor %}
+                
+            </ul>
+        </div>
+    </div>
+    <div class="column" style="flex: 1; padding: 5px; text-align: left;">
+       
+        <div>
+            <ul style="list-style-type: none; padding: 0; margin: 0; font-size: 18px;">
+                <li style="font-size: 30px; margin-bottom: 20px;">AVRUPA YAKASI</li>
+                {% for item in avrupa_yakasi_list %}
+                    <li style="padding: 10px 0; border-bottom: 1px solid #ccc;">
+                        {{ item }}
+                    </li>
+                {% endfor %}
+                
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end: Info Table Section -->
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}

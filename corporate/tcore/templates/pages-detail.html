@@ -1,0 +1,19 @@
+    {% extends 'base.html' %}
+    {% load static %}
+
+    {% block title %}{{ pages.title }}{% endblock %}
+
+    {% block extracss %}
+    <!-- Ek CSS buraya eklenebilir -->
+    {% endblock %}
+
+    {% block content %}
+    <div class="row mt-4 mb-4">
+        <div class="col-md-8">
+            <h2 class="mb-4 mt-4">{{ pages.title }}</h2>
+            <div class="col-md-12 mb-3">
+                <p>{{ pages.content|safe }}</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

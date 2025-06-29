@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}İstanbul Eurovelo Bisiklet Rota Çalışmaları-Bisiklet Şefliği{% endblock %}
+
+{% block content %}
+
+
+<section id="page-title" class="text-light" style="background-color: #002E71;">
+    <div class="container">
+        <div class="breadcrumb" style="color: white;">
+            <ul>
+                <li><a href="/">Anasayfa</a></li>
+                <li class="active"><a href="#" style="color: white;">Haritalar</a></li>
+            </ul>
+        </div>
+        <div class="page-title">
+            <h1>İstanbul Eurovelo Bisiklet Rota Çalismalar</h1>
+            <span></span>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <h3>İstanbul Eurovelo Bisiklet Rota Çalismalar</h3>
+    <div style="font-size: 1.25em; text-align: justify;">İstanbul Büyükşehir Belediyesi Ulaşım Dairesi Başkanlığı tarafından yürütülen İstanbul EuroVelo rota ağına katılım çalışmaları kapsamında yapılan saha sürüşlerinde ortaya çıkan rotadır.
+
+Not: İstanbul bisiklet haritasının sol üst kısmında bulunan ok işaretini kullanarak, açılan menüden harita açıklamasına ulaşabilirsiniz.</div>
+    <div><iframe src="https://www.google.com/maps/d/embed?mid=1DwnpdZEBm2_lnRf9uPJZz3y4KgZADstm" width="1263" height="691"></iframe></div>
+</div>
+
+<!-- Plugins -->
+<script src="js/jquery.js"></script>
+<script src="js/plugins.js"></script>
+<!-- Template functions -->
+<script src="js/functions.js"></script>
+<!-- Google Maps files -->
+<script type='text/javascript' src='//maps.googleapis.com/maps/api/js?key=AIzaSyBOksKHb9HyydVB-mcrqKUVfA_LeB79jcQ'></script>
+<script type="text/javascript" src="plugins/gmap3/gmap3.min.js"></script>
+<script type="text/javascript" src="plugins/gmap3/map-styles.js"></script>
+<script type="text/javascript">
+    $('#google-map-multiple').gmap3({
+            center: [48.8620722, 2.352047],
+            zoom: 3
+        })
+        .marker([{
+            position: [40.712776, -74.005974],
+            icon: ' '
+        }, {
+            position: [55.378052, -3.435973],
+            icon: ' '
+        }, {
+            position: [51.165691, 10.451526],
+            icon: ' '
+        }]).overlay({
+            position: [40.712776, -74.005974],
+            content: '<div class="animated-dot"></div>',
+        }).overlay({
+            position: [55.378052, -3.435973],
+            content: '<div class="animated-dot"></div>',
+        }).overlay({
+            position: [51.165691, 10.451526],
+            content: '<div class="animated-dot"></div>',
+        });
+</script>
+
+{% endblock %}

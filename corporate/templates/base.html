@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="INSPIRO" />
+    <meta name="description" content="İstanbul Bisiklet">
+    <link rel="icon" type="image/png" href="{{ setting.logo1.url }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Document title -->
+    <title>{% block title %}Bisiklet Şefliği-İstanbul Büyükşehir Belediyesi{% endblock %}</title>
+    <!-- Stylesheets & Fonts -->
+    {% load static %}
+    <link href="{% static 'css/plugins.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #logo-img, #logo2-img {
+            height: 75px !important;  /* Logo yüksekliğini küçültmek için */
+            width: auto !important;   /* Genişliğini otomatik ayarla */
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+        .header-right-logo {
+            margin-left: 20px;
+        }
+        .main-menu-nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end; /* Menüyü sağa yasla */
+        }
+        #mainMenu ul {
+            display: flex;
+            justify-content: flex-end; /* Menü elemanlarını sağa yasla */
+        }
+        #mainMenu ul li {
+            margin-left: 20px; /* Menü elemanları arasındaki boşluk */
+        }
+    </style>
+</head>
+<body>
+<div class="body-inner">
+    <!-- Topbar -->
+    <div id="topbar" class="d-none d-xl-block d-lg-block topbar-fullwidth">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="top-menu">
+                        <li>
+                            <a href="mailto:cozummerkezi@ibb.gov.tr">
+                                <img src="/media/dimg/envelope-fill.svg" alt="Telefon" style="width: 15px;">
+                                cozummerkezi@ibb.gov.tr
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="top-menu">
+                        <li>
+                            <a href="tel:153">
+                                <img src="/media/dimg/3-phone(1).svg" alt="Telefon" style="width: 15px;">
+                                ALO 153
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 d-none d-sm-block">
+                    <div class="social-icons social-icons-colored-hover">
+                        <ul>
+                            <li class="social-icon" style="margin-right: 5px;">
+                                <a href="https://www.instagram.com/istanbulbuyuksehirbld/">
+                                    <img src="/media/dimg/instagram-black.svg" alt="Instagram" style="width: 15px;">
+                                </a>
+                            </li>
+                            <li class="social-icon">
+                                <a href="https://x.com/istanbulbld">
+                                    <img src="/media/dimg/x-black.svg" alt="X" style="width: 15px;">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end: Topbar -->
+    <div class="header-extras d-none d-lg-block justify-content-end" style="width: 350px;">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="search" style="position: relative;">
+                <form id="widget-search-form-sidebar" method="get" action="{% url 'search' %}">
+                    <input
+                        class="form-control" name="q" type="text" placeholder="Search..." value="{{ query }}"
+                        style="height: 39px; width: 200px; border-radius: 10px; color: rgb(0, 0, 0); font-weight: 500; padding-left: 10px; font-size: 12px; background-color: transparent; border: 1px grey solid;" />
+                    <!-- Buton olarak simge -->
+                    <button type="submit" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; padding: 0; cursor: pointer; height: 39px; width: 40px;">
+                        <i class="fa fa-search search-icon text-grey" style="font-size: 20px;"></i>
+                    </button>
+                </form>
+            </div>
+            <a href="#" style="margin-left: 60px; display: block; text-align: center;">
+                <img src="{% get_media_prefix %}{{ setting.logo2 }}" class="logo-responsive" alt="Tamyolileri Button"
+                    style="width: 90%; max-width: 100px; margin: 0 auto;">
+            </a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" data-fullwidth="true">
+        <div class="header-inner">
+            <div class="container header-content">
+                <!-- Logo 1 (Sol) -->
+                <div id="logo">
+                    <a href="{% url 'index' %}">
+                        <img src="{% get_media_prefix %}{{ setting.logo1 }}" class="logo-default" id="logo-img" alt="Logo">
+                    </a>
+                </div>
+                <!-- End: Logo 1 -->
+
+                <!-- Navigation -->
+            <div id="mainMenu" class="menu-center menu-lowercase">
+                <div class="container"></div>            
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'index' %}">Anasayfa</a></li>
+                            <li class="dropdown"><a href="#">Kurumsal</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'misyonumuz' %}">Misyonumuz</a></li>
+                                    <li><a href="{% url 'vizyonumuz' %}">Vizyonumuz</a></li>
+                                    <li><a href="{% url 'hakkımızda' %}">Hakkımızda</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="#">Haritalar</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'İBBHaritası' %}">İstanbul Bisiklet Haritası</a></li>
+                                    <li><a href="{% url 'rota' %}">İstanbul Eurovelo Rota Çalışmaları</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="{% url 'entegrasyon' %}">Entegrasyon</a></li>
+                            <li class="dropdown mega-menu-item"><a href="{% url 'haberler' %}">Haberler</a></li>
+                            <li class="dropdown mega-menu-item"><a href="{% url 'blog' %}">Blog</a></li>
+                            <li class="dropdown mega-menu-item"><a href="{% url 'index' %}">İletişim</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- End: Navigation -->
+
+              
+            </div>
+        </div>
+    </header>
+    <!-- End: Header -->
+
+
+
+    <!-- Main Content Block -->
+    {% block content %}{% endblock %}
+    <h1 class="space"></h1>
+
+    <footer id="footer" style="background-color: #002E71;">
+        <div class="footer-content">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class=" col-md-6 col-lg-3 d-flex flex-column align-items-center">
+                        <p>
+                            <a href="/">
+                                <img src="{% get_media_prefix %}{{setting.footerlogo1}}" alt="logo" style="width: 50%;">
+                            </a>
+                        </p>
+                        <div class="widget-title1" style="color: aliceblue;">
+                            <h4 style="color: white; font-size: 16px;"></h4>
+                            <p style="color: white; font-size: 14px;">
+                                <a href="https://ibb.istanbul/kisisel-verilerin-islenmesine-iliskin-aydinlatma-metni" target="_blank" style="color: white; text-decoration: none;">Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni</a>
+                            </p>                        
+                        </div>
+                        
+                    </div>
+                    <div class=" col-md-6 col-lg-3">
+                        <!-- Footer widget area 1 -->
+                        <div class="widget-title1" style="color: aliceblue;">
+                            <h4 style="color: white; font-size: 16px; text-decoration: underline;">Adres</h4>
+                            <p style="color: white; font-size: 14px;">Osmaniye Mah. Çobançeşme Koşuyolu Blv.No:3 34146 Bakırköy/İSTANBUL
+                            </p>
+                            
+                        </div>
+                        <!-- end: Footer widget area 1 -->
+                    </div>
+                    <div class=" col-md-6 col-lg-3">
+                        <!-- Sosyal medya ve Atatürk logosu -->
+                        <div class="widget-title1" style="color: aliceblue; display: flex; flex-direction: column; align-items: center;">
+                            <!-- Sosyal medya yazısı -->
+                            <h4 style="color: white; font-size: 16px; margin-bottom: 10px; font-weight: bold;">SOSYAL MEDYA</h4>
+                            
+                            <!-- Sosyal medya ikonları -->
+                            <div class="social-icons social-icons-colored-hover" style="margin-bottom: 5px;">
+                                <ul style="display: flex; justify-content: center;">
+                                    <li class="social-icon" style="margin-right: 15px;"><a href="https://www.linkedin.com/company/istanbul-buyuksehir-belediyesi/"><img
+                                                src="media/dimg/ibb-linkedln.svg" alt="LinkedIn"
+                                                style="width: 20px;"></a></li>
+                                    <li class="social-icon" style="margin-right: 15px;"><a href="https://www.instagram.com/istanbulbuyuksehirbld"><img
+                                                src="/media/dimg/ibb-instagram.svg" alt="Instagram"
+                                                style="width: 20px;"></a></li>
+                                    <li class="social-icon" style="margin-right: 15px;"><a href="https://www.facebook.com/istanbulbuyuksehirbld/"><img
+                                                src="/media/dimg/ibb-facebook.svg" alt="Facebook"
+                                                style="width: 20px;"></a></li>
+                                    <li class="social-icon"><a href="https://x.com/istanbulbld"><img src="/media/dimg/ibb-x.svg"
+                                                alt="X" style="width: 20px;"></a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Atatürk logosu -->
+                            <div class="logo-container" sstyle="margin-top: 35px; margin-bottom: 20px;"
+                            >
+                            <a href="https://cozummerkezi.ibb.istanbul/">
+                                <img src="/media/dimg/alo153-light.svg" alt="Alo 153 Logo" style="width: 100%;">
+                            </a> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-6 col-lg-3">
+                        <!-- Footer widget area 3 -->
+                        <div class="widget" style="text-align: center;">
+                            <img src="/media/dimg/tmyolileri.svg" alt="Tamyolileri Button" style="width: 80%; max-width: 160px;">
+                        </div>
+                        <!-- end: Footer widget area 3 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: blue" class="copyright-content">
+            <div  class="container">
+                <div  class="copyright-text text-center">&copy; <a href="https://ibb.istanbul/bilgi-islem-dairesi-baskanligi/" target="_blank" class="text-white" rel="noopener"> Bilgi İşlem Müdürlüğü - İBB Bilgi İşlem Dairesi Başkanlığı tarafından ❤️ ile tasarlanmıştır.</a> </div>
+            </div>
+        </div>
+    </footer>
+    <style>
+        #footer .footer-content .row > div {
+            margin-bottom: 20px; /* Boşlukları artırmak için margin-bottom ekleyin */
+            vertical-align: baseline !important; /* Vertical align özelliğini ekleyin */
+        }
+    
+        @media (max-width: 991px) {
+            #footer .footer-content .row > div {
+                margin-bottom: 15px; /* Küçük ekranlarda boşlukları azaltabilirsiniz */
+            }
+        }
+    </style>
+    
+    
+        </div>
+        <!-- end: Body Inner -->
+    
+        <!-- Scroll top -->
+        <a id="scrollTop">
+            <i class="icon-chevron-up"></i>
+            <i class="icon-chevron-up"></i>
+        </a>
+    
+        
+        <script src="/static/js/jquery.js"></script>
+      
+        <script src="/static/js/plugins.js"></script>
+    
+        <!-- Template functions -->
+        <script src="/static/js/functions.js"></script>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                setTimeout(function () {
+                    var loader = document.getElementById('loader');
+                    loader.style.display = 'none';
+                }, 2000);
+                // 2 saniye sonra loader'ı gizle
+            });
+        </script>
+        
+
+{% block script %}{% endblock %}
+</body>
+    

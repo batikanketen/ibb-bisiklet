@@ -1,0 +1,206 @@
+<!-- haber_detail.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ haber.title }}{% endblock %}
+
+{% block content %}
+
+<!-- Page title -->
+<section id="page-title" class="text-light" style="background-color: #002E71;">
+    <div class="container">
+        <div class="breadcrumb mt-4" style="color: white;">
+            <ul>
+                <li><a href="/">Anasayfa</a></li>
+                <li class="active"><a href="#" style="color: white;">Haberler</a></li>
+            </ul>
+        </div>
+        <div class="page-title">
+            <h1>{{haber.title}}</h1>
+            <span></span>
+        </div>
+    </div>
+</section>
+<!-- End: Page title -->
+
+<section id="page-content">
+    <div class="container">
+        
+        <hr class="space">
+        <div>
+            <div>
+                <p style="font-size: 1em;"><strong>{{ haber.title }}</strong></p>
+
+                {% if haber.image1 %}
+                    <img src="{{ haber.image1.url }}" class="img-fluid" alt="{{ haber.title }}">
+                {% endif %}
+                <p>{{ haber.description|safe }}</p>      
+            </div>
+            
+            <div data-lightbox="gallery" class="row">
+                {% if haber.extraimg1 %}
+                <div class="col-lg-4">
+                    <div class="grid-item">
+                        <div class="grid-item-wrap">
+                            <div class="grid-image">
+                                <img alt="Image Lightbox" src="{{ haber.extraimg1.url }}" />
+                            </div>
+                            <div class="grid-description">
+                                <a data-lightbox="gallery-image" href="{{ haber.extraimg1.url }}" class="btn btn-light btn-rounded">Zoom</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if haber.extraimg2 %}
+                <div class="col-lg-4">
+                    <div class="grid-item">
+                        <div class="grid-item-wrap">
+                            <div class="grid-image">
+                                <img alt="Image Lightbox" src="{{ haber.extraimg2.url }}" />
+                            </div>
+                            <div class="grid-description">
+                                <a data-lightbox="gallery-image" href="{{ haber.extraimg2.url }}" class="btn btn-light btn-rounded">Zoom</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if haber.extraimg3 %}
+                <div class="col-lg-4">
+                    <div class="grid-item">
+                        <div class="grid-item-wrap">
+                            <div class="grid-image">
+                                <img alt="Image Lightbox" src="{{ haber.extraimg3.url }}" />
+                            </div>
+                            <div class="grid-description">
+                                <a data-lightbox="gallery-image" href="{{ haber.extraimg3.url }}" class="btn btn-light btn-rounded">Zoom</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if haber.extraimg4 %}
+                <div class="col-lg-4">
+                    <div class="grid-item">
+                        <div class="grid-item-wrap">
+                            <div class="grid-image">
+                                <img alt="Image Lightbox" src="{{ haber.extraimg4.url }}" />
+                            </div>
+                            <div class="grid-description">
+                                <a data-lightbox="gallery-image" href="{{ haber.extraimg4.url }}" class="btn btn-light btn-rounded">Zoom</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if haber.extraimg5 %}
+                <div class="col-lg-4">
+                    <div class="grid-item">
+                        <div class="grid-item-wrap">
+                            <div class="grid-image">
+                                <img alt="Image Lightbox" src="{{ haber.extraimg5.url }}" />
+                            </div>
+                            <div class="grid-description">
+                                <a data-lightbox="gallery-image" href="{{ haber.extraimg5.url }}" class="btn btn-light btn-rounded">Zoom</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if haber.extraimg6 %}
+                <div class="col-lg-4">
+                    <div class="grid-item">
+                        <div class="grid-item-wrap">
+                            <div class="grid-image">
+                                <img alt="Image Lightbox" src="{{ haber.extraimg6.url }}" />
+                            </div>
+                            <div class="grid-description">
+                                <a data-lightbox="gallery-image" href="{{ haber.extraimg6.url }}" class="btn btn-light btn-rounded">Zoom</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if haber.extraimg7 %}
+                <div class="col-lg-4">
+                    <div class="grid-item">
+                        <div class="grid-item-wrap">
+                            <div class="grid-image">
+                                <img alt="Image Lightbox" src="{{ haber.extraimg7.url }}" />
+                            </div>
+                            <div class="grid-description">
+                                <a data-lightbox="gallery-image" href="{{ haber.extraimg7.url }}" class="btn btn-light btn-rounded">Zoom</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if haber.extraimg8 %}
+                <div class="col-lg-4">
+                    <div class="grid-item">
+                        <div class="grid-item-wrap">
+                            <div class="grid-image">
+                                <img alt="Image Lightbox" src="{{ haber.extraimg8.url }}" />
+                            </div>
+                            <div class="grid-description">
+                                <a data-lightbox="gallery-image" href="{{ haber.extraimg8.url }}" class="btn btn-light btn-rounded">Zoom</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <hr class="space">
+    </div>
+    <div class="col-md-3">
+        <div class="widget clearfix widget-archive">
+            <h4 class="widget-title" style="font-weight: bold;">Genel</h4>
+            <ul class="list list-lines" style="font-weight: bold;">
+                <li><a href="/blog/">Blog Yazilari</a></li>
+                <li><a href="/haberler/">Haberler</a></li>
+            
+                <li><a href="/haritalar/istanbul-bisiklet-haritasi">İstanbul Bisiklet Haritası</a></li>
+            
+                <li><a href="/haritalar/istanbul-eurovelo-bisiklet-rota-calismalar">İstanbul Eurovelo Bisiklet Rota Çalismalar</a></li>
+            
+                <li><a href="/entegrasyon/">Entegrasyon</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="widget">
+        <h4 class="widget-title">Haberler</h4>
+        <div class="post-thumbnail-list">
+            
+            <div class="post-thumbnail-entry">
+             
+                    <img alt="İSTANBUL BİSİKLET EVİ AÇILDI" src="/media/content/bisiklet-evi1-495x400.jpg">
+                
+                <div class="post-thumbnail-content" >
+                    <a href="/haberler/istanbul-bisiklet-evi-acildi/" style="font-weight: bold;">İSTANBUL BİSİKLET EVİ AÇILDI</a>
+    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+{% endblock %}

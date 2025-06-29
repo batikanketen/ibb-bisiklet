@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<h1>Search Results for "{{ query }}"</h1>
+
+<form class="search-form" action="{% url 'search' %}" method="get">
+    <input class="form-control" name="q" type="text" placeholder="Search..." value="{{ query }}" />
+    <button type="submit" style="background: none; border: none; cursor: pointer;">
+        <i class="fas fa-search"></i>
+    </button>
+    <span class="text-muted">Start typing & press "Enter" or "ESC" to close</span>
+</form>
+
+<h2>Haberler Results</h2>
+{% if haberler_results %}
+    <ul>
+        {% for item in haberler_results %}
+            <li>
+                <a href="{% url 'haber_detay' item.id %}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No results found in Haberler for "{{ query }}"</p>
+{% endif %}
+
+<h2>Blog Results</h2>
+{% if blog_results %}
+    <ul>
+        {% for item in blog_results %}
+            <li>
+                <a href="{% url 'blog_detail' item.id %}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No results found in Blog for "{{ query }}"</p>
+{% endif %}
+{% endblock %}
+

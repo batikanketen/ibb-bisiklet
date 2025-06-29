@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Blog Search Results{% endblock %}
+
+{% block content %}
+<h1>Search Results</h1>
+
+<form class="search-form" action="{% url 'blog_search' %}" method="get">
+    <input class="form-control" name="q" type="text" placeholder="Search Blog..." value="{{ query }}" />
+    <button type="submit" style="background: none; border: none; cursor: pointer;">
+        <i class="fas fa-search"></i>
+    </button>
+    <span class="text-muted">Start typing & press "Enter" or "ESC" to close</span>
+</form>
+
+{% if results %}
+    <ul>
+        {% for blog in results %}
+            <li>
+                <a href="{% url 'blog_detail' blog.id %}">{{ blog.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No results found for "{{ query }}"</p>
+{% endif %}
+{% endblock %}
